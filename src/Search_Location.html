@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search_Location</title>
+    <script>
+        // 解析URL查询参数
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i=0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                if(pair[0] == variable){ return pair[1]; }
+            }
+            return(false);
+        }
+
+        // 当页面加载完成时获取地点信息
+        window.onload = function() {
+            var city = getQueryVariable("city");
+            if(city) {
+                fetchLocationData(decodeURIComponent(city));
+            } else {
+                document.getElementById('location-info').innerHTML = 'There is no city info';
+            }
+        };
+
+        function fetchLocationData(city) {
+            // 你的获取地点信息的代码
+            // 这里暂时使用一个静态的例子
+            document.getElementById('location-info').innerHTML = 'Location: ' + city + '<br>Temperature: 25°C';
+        }
+    </script>
+</head>
+<body>
+    <div id="location-info">
+        <!-- location info -->
+    </div>
+</body>
+</html>
