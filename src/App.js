@@ -1,18 +1,11 @@
-import './App.css';
-
-const api = {
-    key: process.env.REACT_APP_API_KEY,
-    base: process.env.REACT_APP_API_BASE
-  }
-
-function App() {
-    return (
-      <div className="App">
-        <header className="App-header">
-            <h1>Weather Tour</h1>
-        </header>
-      </div>
-    );
-  }
-
+import React from 'react';
+import Weather from './Weather';
+const App = () => {
+return (
+<div>
+<h1>WeatherTour</h1>
+<Weather />
+</div>
+);
+};
 export default App;
