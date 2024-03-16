@@ -12,14 +12,24 @@ import wind_icon from '../Assets/wind-icon.png'
 const WeatherTour = () => {
   return (
     <div className = 'container'>
-      <div className = 'top-bar'>
-        <h1>Where are you travelling?</h1>
-        <div className="text-box">
-          <input type="text" className="city-input" placeholder = "Enter a city" />
+      <div className="left-container">
+        <div className = 'top-bar'>
+          <h1>Where are you travelling?</h1>
+          <div className="text-box">
+            <input type="text" className="city-input" placeholder = "Enter a city" />
+          </div>
+        </div>
+        <div className="weather-info">
+
         </div>
       </div>
-      <div className="weather-info">
+      <div className="right-container">
+        <div className="top-bar2">
+          <h1>Events near you</h1>
+        </div>
+        <div className="events-info">
 
+        </div>
       </div>
     </div>
   )

@@ -10,7 +10,8 @@ import WeatherTour from './Components/WeatherTour/WeatherTour.jsx';
 function App() {
     return (
       <div className = "App">
-        <WeatherTour/>
+        <Header />
+        <WeatherTour />
       </div>
     );
   }
