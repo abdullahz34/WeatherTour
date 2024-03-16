@@ -1,24 +1,16 @@
 import './App.css';
+import Header from './Components/WeatherTour/Header.jsx';
+import WeatherTour from './Components/WeatherTour/WeatherTour.jsx';
 
-const api = {
-    key: process.env.REACT_APP_API_KEY,
-    base: process.env.REACT_APP_API_BASE
-  }
+// const api = {
+//     key: process.env.REACT_APP_API_KEY,
+//     base: process.env.REACT_APP_API_BASE
+//   }
 
 function App() {
     return (
-      <div>
-        <h1 id = "title">Weather Tour</h1>
-        <form>
-          <label>Where are you travelling?</label>
-          <br/>
-          <input
-            type = "text"
-            required
-          />
-          <br/>
-          <button type = "submit">Submit</button>
-        </form>
+      <div className = "App">
+        <WeatherTour/>
       </div>
     );
   }
