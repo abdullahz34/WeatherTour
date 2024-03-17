@@ -4,6 +4,9 @@ import './WeatherApp.css'
 import logo from '../Assets/wt-logo.png'
 
 function WeatherApp() {
+    const getQuote = () => {
+        axios.get('')
+    }
   return (
     <div className='bg'>
         <div className='container'>
@@ -18,13 +21,14 @@ function WeatherApp() {
             <h1>Where are you travelling?</h1>
             <form id = 'city'>
                 <input type="text" className="city-input" placeholder='Enter a city'/>
+                <button onClick = {getQuote}>Search</button>
             </form>
             <div className="weather-info-box">
                 <div className="main-weather">
 
                 </div>
                 <div className="future-weather">
-                    
+
                 </div>
             </div>
         </div>

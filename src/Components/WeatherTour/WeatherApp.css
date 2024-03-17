@@ -56,7 +56,15 @@
     outline: none;
     padding-left: 10px;
 }
-
+.weather-info button {
+    font-size: 15px;
+    color: #6b6b6b;
+    border-radius: 12px;
+    background-color: #c4c4c4;
+    box-shadow: 0px 4px 4px #00000040;
+    border: none;
+    outline: none;
+}
 h1 {
     color: #b88888;
     text-shadow: 0px 4px 4px #00000040;
