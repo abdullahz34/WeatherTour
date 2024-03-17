@@ -1,3 +1,5 @@
+import React from 'react';
+import Search from './components/Search';
 import './App.css';
 import WeatherApp from './Components/WeatherTour/WeatherApp.jsx';
 
@@ -15,3 +17,5 @@ function App() {
   }
 
 export default App;
+
+
