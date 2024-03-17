@@ -20,13 +20,18 @@ function WeatherApp() {
                 <input type="text" className="city-input" placeholder='Enter a city'/>
             </form>
             <div className="weather-info-box">
+                <div className="main-weather">
 
+                </div>
+                <div className="future-weather">
+                    
+                </div>
             </div>
         </div>
         <div className="event-info">
             <h1>Events near you</h1>
             <div className="event-info-box">
-                
+
             </div>
         </div>
         </div>
