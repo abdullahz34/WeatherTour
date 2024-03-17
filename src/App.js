@@ -1,6 +1,5 @@
 import './App.css';
-import Header from './Components/WeatherTour/Header.jsx';
-import WeatherTour from './Components/WeatherTour/WeatherTour.jsx';
+import WeatherApp from './Components/WeatherTour/WeatherApp.jsx';
 
 // const api = {
 //     key: process.env.REACT_APP_API_KEY,
@@ -10,8 +9,7 @@ import WeatherTour from './Components/WeatherTour/WeatherTour.jsx';
 function App() {
     return (
       <div className = "App">
-        <Header />
-        <WeatherTour />
+        <WeatherApp />
       </div>
     );
   }
