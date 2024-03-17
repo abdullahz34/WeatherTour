@@ -1,6 +1,5 @@
 import './App.css';
 import WeatherApp from './Components/WeatherTour/WeatherApp.jsx';
-import axios from 'axios';
 
 const api = {
     key: process.env.REACT_APP_API_KEY,
