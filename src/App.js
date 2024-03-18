@@ -52,14 +52,18 @@ const App = () => {
 
   return (
       <>
-      <header className="header">
-        <h1>Weather Tour</h1>
-      </header>
-      <Search onSearchChange={handleOnSearchChange} />
-      {currentWeather && <CurrentWeather data={currentWeather} />} {/* only render the CurrentWeather component if currentWeather is not null */}
-      {forecast && <Forecast data={forecast} />}
-      {currentWeather && <Recommendations data={currentWeather} />}
-      {currentWeather && <Alerts data={currentWeather} />}
+      <div className='container'>
+        <header className="header">
+          <h1>Weather Tour</h1>
+        </header>
+        <div className='search'>
+          <Search onSearchChange={handleOnSearchChange} />
+        </div>
+        {currentWeather && <CurrentWeather data={currentWeather} />} {/* only render the CurrentWeather component if currentWeather is not null */}
+        {forecast && <Forecast data={forecast} />}
+        {currentWeather && <Recommendations data={currentWeather} />}
+        {currentWeather && <Alerts data={currentWeather} />}
+      </div>
     </>
   );
 };
