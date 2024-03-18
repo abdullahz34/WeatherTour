@@ -4,6 +4,7 @@ import Search from './components/Search';
 import './App.css';
 import CurrentWeather from './components/CurrentWeather';
 import Forecast from './components/Forecast';
+import Recommendations from './components/Recommendations';
 
 const weather_api = {
   key: process.env.REACT_APP_WEATHER_API_KEY,
@@ -40,14 +41,15 @@ const App = () => {
   console.log(forecast);
 
   return (
-    <div className="container">
+      <>
       <header className="header">
-        <h1>Weather Forecast App</h1>
+        <h1>Weather Tour</h1>
       </header>
       <Search onSearchChange={handleOnSearchChange} />
       {currentWeather && <CurrentWeather data={currentWeather} />} {/* only render the CurrentWeather component if currentWeather is not null */}
       {forecast && <Forecast data={forecast} />}
-    </div>
+      {currentWeather && <Recommendations data={currentWeather} />}
+    </>
   );
 };
 export default App;
