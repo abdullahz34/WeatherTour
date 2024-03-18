@@ -4,6 +4,10 @@ import './Alerts.css';
 const Alerts = ({ data }) => {
     return (
         <div className="alerts">
+            <div className="title-container">
+                <h2 className="title">Warnings</h2>
+            </div>
+            <div className='content'>
             {/* Check if there are any alerts */}
             {data && data.length > 0 ? (
                 // If there are alerts, map over them and create a div for each one
@@ -24,6 +28,7 @@ const Alerts = ({ data }) => {
                     <p>There are no warnings to be reported.</p>
                 </>
             )}
+            </div>
         </div>
     );
 };

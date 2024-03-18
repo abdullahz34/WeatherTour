@@ -69,10 +69,16 @@ const Recommendations = ({ data }) => {
     <div className="recommendations">
       <div className="title-container">
         <h2 className="title">Travel Recommendations</h2>
-        <img src="/icons/info_circle.png" alt="info_circle" className="info_circle" />
       </div>
-      <p className='recommendation'>{recommendation}</p>
-      <p>{reason}</p>
+      <div className='information'>
+        <div className="infopng">
+          <img src="/icons/info_circle.png" alt="info_circle" className="info_circle" />
+        </div>
+        <div className="infotext">
+          <p className='recommendation'>{recommendation}</p>
+          <p className='reason'>{reason}</p>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,41 +1,41 @@
-  
-.header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* background-color: #282c34; */
-    color: white;
-    font-family: JetBrains Mono, monospace;
-    letter-spacing: 0.3em;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Karla:ital,wght@0,200..800;1,200..800&family=Nanum+Gothic+Coding&family=Playfair+Display:wght@500&family=Quicksand&display=swap');
 
-  .container {
-    display: grid;
-    grid-template-areas: 
-      "header header header"
-      "search search search"
-      "weather rec warn"
-      "forecast events warn";
-      grid-template-columns: 40% 40% 20%;
-  }
-  .forecast {
-    grid-area: forecast;
-  }
-  .search {
-    grid-area: search;
-  }
-  .header {
-    grid-area: header;
-  }
-  .weather {
-    grid-area: weather;
-  }
-  .recommendations {
-    grid-area: rec;
-  }
-  .alerts {
-    grid-area: warn;
-  }
-  .events {
-    grid-area: events;
-  }
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "search search search"
+    "weather rec warn"
+    "weather rec warn"
+    "forecast events warn";
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-rows: 10% 10% 30% 20% 30%;
+    font-family: "JetBrains Mono", monospace;
+    color: #ffffffae;
+}
+.header {
+  display: flex;
+  grid-area: header;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffffae;
+  letter-spacing: 0.3em;
+}
+.search {
+  grid-area: search;
+}
+.weather {
+  grid-area: weather;
+}
+.forecast {
+  grid-area: forecast;
+}
+.recommendations {
+  grid-area: rec;
+}
+.events {
+  grid-area: events;
+}
+.alerts {
+  grid-area: warn;
+}

@@ -1,14 +1,14 @@
 .weather{
-    margin-top: 3vh;
+    margin-top: 10px;
     margin-bottom: 2vh;
     width: 90%;
     height: 400px;
-    padding: 5px;
+    /* padding: 5px; */
 }
 
 .humidity-icon{
     width: 20%;
-    margin-top: 2vh;
+    /* margin-top: 2vh; */
 }
 
 .top {
