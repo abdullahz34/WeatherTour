@@ -5,6 +5,7 @@ import './App.css';
 import CurrentWeather from './components/CurrentWeather';
 import Forecast from './components/Forecast';
 import Recommendations from './components/Recommendations';
+import Alerts from './components/Alerts';
 
 const weather_api = {
   key: process.env.REACT_APP_WEATHER_API_KEY,
@@ -58,6 +59,7 @@ const App = () => {
       {currentWeather && <CurrentWeather data={currentWeather} />} {/* only render the CurrentWeather component if currentWeather is not null */}
       {forecast && <Forecast data={forecast} />}
       {currentWeather && <Recommendations data={currentWeather} />}
+      {currentWeather && <Alerts data={currentWeather} />}
     </>
   );
 };

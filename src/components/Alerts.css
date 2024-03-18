@@ -1,0 +1,14 @@
+.alerts {
+    display: flex;
+    width : 33%;
+    background-color: #30343C;
+    border: 1px solid #000; 
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.alert-icon {
+    display: block;
+    width: 50px;
+    height: 50px;
+  }
