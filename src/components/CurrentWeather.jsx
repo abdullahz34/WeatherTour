@@ -24,11 +24,15 @@ export const CurrentWeather = ({ data }) => {
                     </div>
                 </div>
             </div>
-            <div className="bottom">
-                <p className="weather-description">{capitalizeFirstLetter(data.weather[0].description)}</p>
-                <p className="date">{new Date().toLocaleDateString('en-GB')}</p>
-                <p className="feelslike">Feels like: {Math.round(data.main.feels_like)}&deg;C</p>
-                <p className="pressure">Pressure: {data.main.pressure} hpa</p>
+            <div className="bottom flex-container">
+                <div>
+                    <p className="feelslike">Feels like: {Math.round(data.main.feels_like)}&deg;C</p>
+                    <p className="pressure">Pressure: {data.main.pressure} hpa</p>
+                </div>
+                <div>
+                    <p className="weather-description">{capitalizeFirstLetter(data.weather[0].description)}</p>
+                    <p className="date">{new Date().toLocaleDateString('en-GB')}</p>
+                </div>
             </div>
         </div>
     )
