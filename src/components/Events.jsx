@@ -9,4 +9,4 @@ const Events = ({ data }) => {
     );
 };
 
-export default Forecast;
+export default Events;
