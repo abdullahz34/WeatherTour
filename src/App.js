@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Search from './components/Search';
 import './App.css';
 import CurrentWeather from './components/CurrentWeather';
@@ -16,29 +16,38 @@ const App = () => {
   const [currentWeather, setCurrentWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
 
-  const handleOnSearchChange = (searchData) => {
-    // console.log(searchData)
-    const [lat, lon] = searchData.value.split(" ");
-
-    const currentWeatherFetch = fetch(`${weather_api.base}weather?lat=${lat}&lon=${lon}&appid=${weather_api.key}&units=metric`)
-    const forecastFetch = fetch(`${weather_api.base}forecast/hourly?lat=${lat}&lon=${lon}&appid=${weather_api.key}&units=metric`)
+  const fetchWeatherData = (lat, lon, city) => {
+    const currentWeatherFetch = fetch(`${weather_api.base}weather?lat=${lat}&lon=${lon}&appid=${weather_api.key}&units=metric`);
+    const forecastFetch = fetch(`${weather_api.base}forecast/hourly?lat=${lat}&lon=${lon}&appid=${weather_api.key}&units=metric`);
 
     Promise.all([currentWeatherFetch, forecastFetch])
       .then(async (response) => {
         const weatherResponse = await response[0].json();
         const forecastResponse = await response[1].json();
 
-        setCurrentWeather({ city: searchData.label, ...weatherResponse });
-        setForecast({ city: searchData.label, ...forecastResponse });
-
+        setCurrentWeather({ city, ...weatherResponse });
+        setForecast({ city, ...forecastResponse });
       })
       .catch((error) => {
-        console.log(error);
+        console.error('Error:', error);
       });
-  }
+  };
+
+  const handleOnSearchChange = (searchData) => {
+    const [lat, lon] = searchData.value.split(" ");
+    fetchWeatherData(lat, lon, searchData.label);
+  };
+
+  useEffect(() => {
+    const lat = 51.5074; // latitude for London
+    const lon = -0.1278; // longitude for London
+    fetchWeatherData(lat, lon, 'London, GB');
+  }, []);
 
   console.log(currentWeather);
   console.log(forecast);
+
+
 
   return (
       <>
