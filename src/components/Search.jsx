@@ -26,7 +26,7 @@ const Search = ({ onSearchChange }) => {
     const loadOptions = (inputValue) => {
         // Send a GET request to the Geo API to get the cities
         return fetch(
-          `${geoApiOptions.url}cities?minPopulation=1000000&namePrefix=${inputValue}`,
+          `${geoApiOptions.url}cities?minPopulation=10000&namePrefix=${inputValue}`,
           geoApiOptions
         )
           .then((response) => response.json())
@@ -36,6 +36,7 @@ const Search = ({ onSearchChange }) => {
                 return {
                   value: `${city.latitude} ${city.longitude}`,
                   label: `${city.name}, ${city.countryCode}`,
+                  population : `${city.population}`,
                 };
               }),
             };
@@ -49,6 +50,16 @@ const Search = ({ onSearchChange }) => {
             value={search}
             onChange={handleOnChange}
             loadOptions={loadOptions}
+            styles={{
+              option: (provided) => ({
+                  ...provided,
+                  color: 'black',
+              }),
+              singleValue: (provided) => ({
+                  ...provided,
+                  color: 'black',
+              }),
+          }}
         />
     );
 };
