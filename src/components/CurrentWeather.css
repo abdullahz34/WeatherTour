@@ -1,6 +1,9 @@
 .weather{
-    margin-top: 4vh;
-    width: 33%;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+    width: 90%;
+    height: 400px;
+    padding: 5px;
 }
 
 .humidity-icon{
@@ -9,24 +12,38 @@
 }
 
 .top {
-    font-size: 24px;
+    font-size: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #30343C;
-    border-radius: 15px;
+    border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
 }
 
 .city{
-    margin-right:10px;
+    font-size: 25pt;
+    margin-right:15px;
+}
+
+.temp{
+    font-size: 25pt;
+    margin-right:15px;
 }
 
 .middle {
+    margin-top: 5px;
     display: flex;
-    justify-content: center;
+    justify-content: column;
     align-items: center;
-  }
+}
+
+.weather-icon-up{
+    width: 35%;
+    height: auto;
+    margin-left: 25px;
+}
 
 .weather-details {
     display: flex;
@@ -40,19 +57,33 @@
 }
 
 .wind-icon, .humidity-icon {
+    margin-left: 30%;
     width: 20%;
-    margin-top: 2vh;
+    margin-top: 3vh;
     margin-right: 10px; /* Add a margin to the right of the icons */
 }
 
+.wind, .humidity{
+    margin-top: 10%;
+    margin-left: 5%;
+    display: flex;
+    justify-content: center;
+    font-size: 15pt;
+}
+
 .flex-container > div {
+    margin-left: 40px;
+    margin-right: 55px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
+    font-size: 12pt;
+    align-items:center;
   }
   
   .flex-container {
+    margin-top: 5%;
     display: flex;
-    justify-content: space-between;
-    gap: 0px; 
+    justify-content: space-between; 
+    align-items:center;
   }
