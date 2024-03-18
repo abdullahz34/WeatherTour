@@ -6,12 +6,20 @@
     "header header header"
     "search search search"
     "weather rec warn"
+    "weather rec warn"
     "forecast events warn";
-    grid-template-columns: 40% 40% 20%;
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-rows: 10% 10% 30% 20% 30%;
     font-family: "JetBrains Mono", monospace;
+    color: #ffffffae;
 }
 .header {
+  display: flex;
   grid-area: header;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffffae;
+  letter-spacing: 0.3em;
 }
 .search {
   grid-area: search;

@@ -1,0 +1,31 @@
+.events {
+    background-color: #30343C;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    color: #ffffffae;
+}
+
+.events .title {
+    text-align: center;
+}
+
+.placeholder-content {
+    display: flex;
+    padding-left: 5px;
+    justify-content: center;
+}
+.placeholder-text {
+    margin-top: -30px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+.placeholder-text h3 {
+    font-family: "JetBrains Mono", monospace;
+
+}
+.events img {
+    height: 100px;
+    padding-right: 10px;
+}

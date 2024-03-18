@@ -14,24 +14,24 @@
         grid-area: header;
         width: 100vw;
         text-align: center;
-      }
-      .search {
+    }
+    .search {
         grid-area: search;
-        width: 83vw
-      }
-      .weather {
+        width: 83vw;
+    }
+    .weather {
         grid-area: weather;
-      }
-      .forecast {
+    }
+    .forecast {
         grid-area: forecast;
-      }
-      .recommendations {
+    }
+    .recommendations {
         grid-area: rec;
-      }
-      .events {
+    }
+    .events {
         grid-area: events;
-      }
-      .alerts {
+    }
+    .alerts {
         grid-area: warn;
-      }
+    }
 }
