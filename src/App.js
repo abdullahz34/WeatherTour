@@ -6,6 +6,7 @@ import CurrentWeather from './components/CurrentWeather';
 import Forecast from './components/Forecast';
 import Recommendations from './components/Recommendations';
 import Alerts from './components/Alerts';
+import Events from '.components/Events';
 
 const weather_api = {
   key: process.env.REACT_APP_WEATHER_API_KEY,
@@ -63,6 +64,7 @@ const App = () => {
         {forecast && <Forecast data={forecast} />}
         {currentWeather && <Recommendations data={currentWeather} />}
         {currentWeather && <Alerts data={currentWeather} />}
+        {currentWeather && <Events data={currentWeather} />}
       </div>
     </>
   );
