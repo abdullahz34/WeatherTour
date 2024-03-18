@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Search from './components/Search';
 import './App.css';
 import CurrentWeather from './components/CurrentWeather';
+import Forecast from './components/Forecast';
 
 const weather_api = {
   key: process.env.REACT_APP_WEATHER_API_KEY,
@@ -18,8 +19,8 @@ const App = () => {
     // console.log(searchData)
     const [lat, lon] = searchData.value.split(" ");
 
-    const currentWeatherFetch = fetch(`${weather_api.base}weather?lat=${lat}&lon=${lon}&units=metric&appid=${weather_api.key}&units=metric`)
-    const forecastFetch = fetch(`${weather_api.base}forecast/hourly?lat=${lat}&lon=${lon}&units=metric&appid=${weather_api.key}&units=metric`)
+    const currentWeatherFetch = fetch(`${weather_api.base}weather?lat=${lat}&lon=${lon}&appid=${weather_api.key}&units=metric`)
+    const forecastFetch = fetch(`${weather_api.base}forecast/hourly?lat=${lat}&lon=${lon}&appid=${weather_api.key}&units=metric`)
 
     Promise.all([currentWeatherFetch, forecastFetch])
       .then(async (response) => {
@@ -45,6 +46,7 @@ const App = () => {
       </header>
       <Search onSearchChange={handleOnSearchChange} />
       {currentWeather && <CurrentWeather data={currentWeather} />} {/* only render the CurrentWeather component if currentWeather is not null */}
+      {forecast && <Forecast data={forecast} />}
     </div>
   );
 };
