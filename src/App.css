@@ -8,3 +8,34 @@
     font-family: JetBrains Mono, monospace;
     letter-spacing: 0.3em;
   }
+
+  .container {
+    display: grid;
+    grid-template-areas: 
+      "header header header"
+      "search search search"
+      "weather rec warn"
+      "forecast events warn";
+      grid-template-columns: 40% 40% 20%;
+  }
+  .forecast {
+    grid-area: forecast;
+  }
+  .search {
+    grid-area: search;
+  }
+  .header {
+    grid-area: header;
+  }
+  .weather {
+    grid-area: weather;
+  }
+  .recommendations {
+    grid-area: rec;
+  }
+  .alerts {
+    grid-area: warn;
+  }
+  .events {
+    grid-area: events;
+  }

@@ -71,7 +71,7 @@ const Recommendations = ({ data }) => {
         <h2 className="title">Travel Recommendations</h2>
         <img src="/icons/info_circle.png" alt="info_circle" className="info_circle" />
       </div>
-      <p>{recommendation}</p>
+      <p className='recommendation'>{recommendation}</p>
       <p>{reason}</p>
     </div>
   );

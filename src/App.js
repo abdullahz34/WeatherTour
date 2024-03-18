@@ -6,6 +6,7 @@ import CurrentWeather from './components/CurrentWeather';
 import Forecast from './components/Forecast';
 import Recommendations from './components/Recommendations';
 import Alerts from './components/Alerts';
+import Events from './components/Events';
 
 const weather_api = {
   key: process.env.REACT_APP_WEATHER_API_KEY,
@@ -52,14 +53,19 @@ const App = () => {
 
   return (
       <>
-      <header className="header">
-        <h1>Weather Tour</h1>
-      </header>
-      <Search onSearchChange={handleOnSearchChange} />
-      {currentWeather && <CurrentWeather data={currentWeather} />} {/* only render the CurrentWeather component if currentWeather is not null */}
-      {forecast && <Forecast data={forecast} />}
-      {currentWeather && <Recommendations data={currentWeather} />}
-      {currentWeather && <Alerts data={currentWeather} />}
+      <div className='container'>
+        <header className="header">
+          <h1>Weather Tour</h1>
+        </header>
+        <div className='search'>
+          <Search onSearchChange={handleOnSearchChange} />
+        </div>
+        {currentWeather && <CurrentWeather data={currentWeather} />} {/* only render the CurrentWeather component if currentWeather is not null */}
+        {forecast && <Forecast data={forecast} />}
+        {currentWeather && <Recommendations data={currentWeather} />}
+        {currentWeather && <Alerts data={currentWeather} />}
+        {currentWeather && <Events data={currentWeather} />}
+      </div>
     </>
   );
 };
