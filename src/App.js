@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import Search from './components/Search';
 import './App.css';
+import './components/mobile.css';
 import CurrentWeather from './components/CurrentWeather';
 import Forecast from './components/Forecast';
 import Recommendations from './components/Recommendations';

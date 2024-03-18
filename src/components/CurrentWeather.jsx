@@ -12,11 +12,11 @@ export const CurrentWeather = ({ data }) => {
                 <p><span className="city">{data.city}</span> <span className="temp">{Math.round(data.main.temp)}&deg;C</span></p>
             </div>
             <div className="middle">
-                <img src={`icons/${data.weather[0].icon}.png`} alt="weather" className="weather-icon" />
+                <img src={`icons/${data.weather[0].icon}.png`} alt="weather" className="weather-icon-up" />
                 <div className="weather-main-details">
                     <div className="wind-container">
                         <img src="icons/wind.png" alt="wind" className="wind-icon" />
-                        <p className="wind">{data.wind.speed} m/s</p>
+                        <p className="wind">{data.wind.speed}m/s</p>
                     </div>
                     <div className="humidity-container">
                         <img src="icons/humidity.png" alt="humidity" className="humidity-icon" />

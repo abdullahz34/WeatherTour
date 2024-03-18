@@ -7,7 +7,7 @@ const Forecast = ({ data }) => {
             {data.list.slice(0, 6).map((hour, index) => (
                 <div key={index} className="forecast-hour">
                     <p>{new Date(hour.dt * 1000).toLocaleTimeString('en-US', { hour: 'numeric', hour12: true })}</p>
-                    <img src={`icons/${hour.weather[0].icon}.png`} alt="weather" className="weather-icon" />
+                    <img src={`icons/${hour.weather[0].icon}.png`} alt="weather" className="weather-icon-down" />
                     <p>{Math.round(hour.main.temp)}&deg;C</p>
                 </div>
             ))}

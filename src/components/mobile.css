@@ -1,0 +1,37 @@
+@media (max-width: 700px) {
+    .container {
+        display: grid;
+        grid-template-areas:
+            "header"
+            "search"
+            "weather"
+            "forecast"
+            "warn"
+            "recs"
+            "events";
+    }
+    .header {
+        grid-area: header;
+        width: 100vw;
+        text-align: center;
+      }
+      .search {
+        grid-area: search;
+        width: 83vw
+      }
+      .weather {
+        grid-area: weather;
+      }
+      .forecast {
+        grid-area: forecast;
+      }
+      .recommendations {
+        grid-area: rec;
+      }
+      .events {
+        grid-area: events;
+      }
+      .alerts {
+        grid-area: warn;
+      }
+}
