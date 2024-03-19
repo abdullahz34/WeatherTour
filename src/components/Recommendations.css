@@ -70,6 +70,10 @@
   border-radius: 15px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   margin-top: 10px;
+  max-width: 100%;
+  overflow: hidden;
+  max-height:fit-content ;
+  text-overflow: ellipsis;
   color: #ffffffae;
 }
 .information {
@@ -77,10 +81,51 @@
   font-family: "Kanit", sans-serif;
   font-weight: 300;
   font-style: normal;
+  flex-grow: 1;
 }
 .info_circle {
   width: 10vw;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .recommendations .title {
   text-align: center;
+}
+
+@media (min-width: 1000px) {
+  .information  {
+      font-size: medium
+  }
+}
+
+@media (max-width: 1000px) {
+  .information  {
+      font-size: 0.9em;
+  }
+}
+
+@media (max-width: 940px) {
+  .information  {
+      font-size: 0.8em;
+  }
+}
+
+@media (max-width: 895px) {
+  .information  {
+      font-size: 0.75em;
+  }
+}
+
+@media (max-width: 859px) {
+  .information  {
+      font-size: 0.7em;
+  }
+}
+
+
+@media (max-width: 841px) {
+  .information  {
+      font-size: medium;
+  }
 }
