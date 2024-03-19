@@ -6,10 +6,9 @@
     "header header header"
     "search search search"
     "weather rec warn"
-    "weather rec warn"
     "forecast events warn";
     grid-template-columns: 2fr 2fr 1fr;
-    grid-template-rows: 10% 10% 30% 20% 30%;
+    grid-template-rows: 10% 10% 50% 30%;
     font-family: "JetBrains Mono", monospace;
     color: #ffffffae;
 }
