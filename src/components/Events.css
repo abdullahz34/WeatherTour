@@ -4,6 +4,7 @@
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     margin-top: 10px;
     color: #ffffffae;
+    max-height: fit-content;
 }
 
 .events .title {

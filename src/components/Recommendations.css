@@ -1,68 +1,4 @@
-/* .recommendations {
-    display: flex;
-    flex-direction: column;
-    grid-template-columns: 1fr 2fr;
-    grid-gap: 20px;
-    background-color: #30343C;
-    border-radius: 15px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    padding-top: 50px;
-    height: 60%;
-    max-width: 90%;
-    margin: 5px 0px 0px 5px;
-    margin-left: -125px;
-    margin-top: 10px;
-    color: #ffffffae;
-  }
-  
- .recommendations .title-container {
-    display: flex;
-    text-align: center;
-    flex-direction: center;
-    justify-content: center;
 
-  }
-  
-  .recommendations .title {
-    text-align: left;
-    font-size: 1.4em;
-    margin-right: 5px;
-    margin-top: -20px;
-    color: #fff;
-    flex-wrap: nowrap;
-    align-items: center;
-    color: #ffffffae;
-  }
-  
-
-.info_circle{
-    display:flex;
-    flex-direction: row;
-    width:100px;
-    justify-content: center;
-}
-  
-  .infotext {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    font-family: "Kanit", sans-serif;
-  }
-
-  .information{
-    display: flex;
-    font-size: 0.9em;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    margin-top: -50px;
-    font-weight: 300;
-    font-style: normal;
-  }
-   */
 .recommendations {
   display: flex;
   flex-direction: column;
@@ -70,6 +6,10 @@
   border-radius: 15px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   margin-top: 10px;
+  max-width: 100%;
+  overflow: hidden;
+  max-height:fit-content ;
+  text-overflow: ellipsis;
   color: #ffffffae;
 }
 .information {
@@ -77,10 +17,51 @@
   font-family: "Kanit", sans-serif;
   font-weight: 300;
   font-style: normal;
+  flex-grow: 1;
 }
 .info_circle {
   width: 10vw;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .recommendations .title {
   text-align: center;
+}
+
+@media (min-width: 1000px) {
+  .information  {
+      font-size: medium
+  }
+}
+
+@media (max-width: 1000px) {
+  .information  {
+      font-size: 0.9em;
+  }
+}
+
+@media (max-width: 940px) {
+  .information  {
+      font-size: 0.8em;
+  }
+}
+
+@media (max-width: 895px) {
+  .information  {
+      font-size: 0.75em;
+  }
+}
+
+@media (max-width: 859px) {
+  .information  {
+      font-size: 0.7em;
+  }
+}
+
+
+@media (max-width: 841px) {
+  .information  {
+      font-size: medium;
+  }
 }
