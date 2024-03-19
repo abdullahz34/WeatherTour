@@ -9,7 +9,7 @@ const Events = ({ data }) => {
             </h2>
             <div className='placeholder-content'>
                 <div className='placeholder-image'>
-                <img src="public/icons/01d.png" alt="" />
+                <img src="/icons/01d.png" alt="" />
                 </div>
                 <div className='placeholder-text'>
                     <h3>The Shard</h3>
