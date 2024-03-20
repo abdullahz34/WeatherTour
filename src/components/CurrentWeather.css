@@ -16,7 +16,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: -30px;
 
     background-color: #30343C;
     border-radius: 10px;
@@ -35,9 +34,9 @@
 }
 
 .middle {
-    margin-top: 5px;
     display: flex;
     justify-content: column;
+
     align-items: center;
 }
 
