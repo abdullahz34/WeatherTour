@@ -6,9 +6,10 @@
   border-radius: 15px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   margin-top: 10px;
+  margin-bottom: 50px;
   max-width: 100%;
   overflow: hidden;
-  max-height:fit-content ;
+  max-height: fit-content;
   text-overflow: ellipsis;
   color: #ffffffae;
 }
