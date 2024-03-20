@@ -18,22 +18,28 @@
         grid-area: header;
         width: 90%;
         text-align: center;
-        padding-left: 17px;
+        padding-left: 10px;
     }
     .search {
         grid-area: search;
         width: 83vw;
-        padding-left: 33px;
+        padding-left: 22px;
     }
     .weather {
         grid-area: weather;
         align-items: center;
+        width: calc(100% - 20px);
+        margin-left: -4.5px;
     }
     .forecast {
         grid-area: forecast;
+        width: calc(100% - 20px);
+        margin-left: -4.5px;
     }
     .recommendations {
         grid-area: recs;
+        width: calc(100% - 20px);
+        margin-left: -4.5px;
         .info_circle {
             margin-left: auto;
             margin-right: auto;
@@ -43,8 +49,12 @@
     }
     .events {
         grid-area: events;
+        width: calc(100% - 20px);
+        margin-left: -4.5px;
     }
     .alerts {
         grid-area: warn;
+        margin-left: -4.5px;
+        width: calc(100% - 30px);
     }
 }
