@@ -10,6 +10,9 @@
             "warn"
             "recs"
             "events";
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
     }
     .header {
         grid-area: header;
@@ -23,12 +26,17 @@
     .weather {
         grid-area: weather;
         align-items: center;
+
     }
     .forecast {
         grid-area: forecast;
     }
     .recommendations {
         grid-area: recs;
+        .info_circle {
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
     .events {
         grid-area: events;
