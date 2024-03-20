@@ -21,8 +21,7 @@
 }
 .info_circle {
   width: 10vw;
-  display:flex;
-
+  display: flex;
 }
 .recommendations .title {
   text-align: center;

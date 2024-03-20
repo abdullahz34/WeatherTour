@@ -18,15 +18,16 @@
         grid-area: header;
         width: 90%;
         text-align: center;
+        padding-left: 17px;
     }
     .search {
         grid-area: search;
         width: 83vw;
+        padding-left: 33px;
     }
     .weather {
         grid-area: weather;
         align-items: center;
-
     }
     .forecast {
         grid-area: forecast;
@@ -36,6 +37,8 @@
         .info_circle {
             margin-left: auto;
             margin-right: auto;
+            /* height: 100px; */
+            /* width: auto; */
         }
     }
     .events {
