@@ -12,6 +12,8 @@
     grid-template-rows: 10% 10% 30% 20% 30%;
     font-family: "JetBrains Mono", monospace;
     color: #ffffffae;
+    margin-left: auto;
+    margin-right: auto;
 }
 .header {
   display: flex;

@@ -1,7 +1,7 @@
 .weather{
     margin-top: 10px;
     margin-bottom: 2vh;
-    width: 98%;
+    width: 90%;
     height: 400px;
     /* padding: 5px; */
 }
@@ -16,8 +16,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     background-color: #30343C;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(20px);
 }
@@ -33,9 +34,9 @@
 }
 
 .middle {
-    margin-top: 5px;
     display: flex;
     justify-content: column;
+
     align-items: center;
 }
 
@@ -64,7 +65,7 @@
 }
 
 .wind, .humidity{
-    margin-top: 20%;
+    margin-top: 10%;
     margin-left: 5%;
     display: flex;
     justify-content: center;
@@ -76,12 +77,13 @@
     margin-right: 55px;
     display: flex;
     flex-direction: column;
+    gap: 5px;
     font-size: 12pt;
     align-items:center;
-    padding: 5px;
   }
   
   .flex-container {
+    margin-top: 5%;
     display: flex;
     justify-content: space-between; 
     align-items:center;
