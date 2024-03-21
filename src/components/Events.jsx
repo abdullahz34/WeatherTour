@@ -1,10 +1,13 @@
 import React from 'react';
 import './Events.css';
 
+// The pois test environment only offers the areas: Banglore, Barcelona, Berlin, Dallas, London, New York, Paris, San Francisco as per "https://github.com/amadeus4dev/data-collection/blob/master/data/pois.md"
+
 const Events = ({ data, poiData }) => {
 
-    console.log(poiData.data[0].name);
-    
+    // console.log(poiData.data[0].name);
+    // console.log(poiData.data[0].geoCode.latitude);
+
     return (
         <div className="events">
             <h2 className='title'>
@@ -25,7 +28,7 @@ const Events = ({ data, poiData }) => {
                         <img src="/icons/03d.png" alt="" />
                     </div>
                     <div className='placeholder-text2'>
-                        <h3>Arcade</h3>
+                        <h3>{poiData.data[1].name}</h3>
                         <p>Indoor activity that's suited for more cloudy weather</p>
                     </div>
                 </div>
