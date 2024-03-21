@@ -45,3 +45,9 @@ h3 a {
     color: #007BFF; /* Change this to the color you want when hovered */
     transform: scale(1.05); /* This will slightly increase the size of the text when hovered */
   }
+
+  .title-container {
+    display: flex;
+    align-items: center; /* This will vertically center the title and the button */
+    justify-content: center; /* This will put some space between the title and the button */
+  }
