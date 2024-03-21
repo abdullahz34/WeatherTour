@@ -1,7 +1,10 @@
 import React from 'react';
 import './Events.css';
 
-const Events = ({ data }) => {
+const Events = ({ data, poiData }) => {
+
+    console.log(poiData.data[0].name);
+    
     return (
         <div className="events">
             <h2 className='title'>
@@ -13,7 +16,7 @@ const Events = ({ data }) => {
                         <img src="/icons/01d.png" alt="" />
                     </div>
                     <div className='placeholder-text'>
-                        <h3>The Shard</h3>
+                        <h3>{poiData.data[0].name}</h3>
                         <p>Outdoor activity that's suited for more sunny weather</p>
                     </div>
                 </div>
