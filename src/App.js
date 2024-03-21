@@ -14,10 +14,16 @@ const weather_api = {
   base: process.env.REACT_APP_WEATHER_API_BASE
 }
 
+const POI_api = {
+  key: process.env.REACT_APP_POI_KEY,
+  secret: process.env.REACT_APP_POI_SECRET
+}
+
 const App = () => {
 
   const [currentWeather, setCurrentWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
+  const [poiData, setPoiData] = useState(null);
 
   const fetchWeatherData = (lat, lon, city) => {
     const currentWeatherFetch = fetch(`${weather_api.base}weather?lat=${lat}&lon=${lon}&appid=${weather_api.key}&units=metric`);
@@ -47,8 +53,44 @@ const App = () => {
     fetchWeatherData(lat, lon, 'London, GB');
   }, []);
 
+
+  // This useEffect hook runs whenever the currentWeather state changes.
+  // When currentWeather changes, it means that the user has searched for a new location.
+  useEffect(() => {
+    if (currentWeather) {
+      const lat = currentWeather.coord.lat;
+      const lon = currentWeather.coord.lon;
+
+      // First, we fetch the access token from the Amadeus API.
+      // We need this token to authenticate our subsequent request to the Points of Interest API.
+      fetch('https://test.api.amadeus.com/v1/security/oauth2/token', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: `grant_type=client_credentials&client_id=${POI_api.key}&client_secret=${POI_api.secret}`
+      })
+        .then(response => response.json())
+        .then(data => {
+          const token = data.access_token;
+
+          // Once we have the access token, we can fetch the points of interest.
+          // We include the access token in the Authorization header of our request.
+          fetch(`https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=${lat}&longitude=${lon}`, {
+            headers: {
+              'Authorization': `Bearer ${token}`
+            }
+          })
+            // We convert the response to JSON and then store the data in the poiData state.
+            .then(response => response.json())
+            .then(data => setPoiData(data));
+        });
+    }
+  }, [currentWeather]);
+
   console.log(currentWeather);
   console.log(forecast);
+  console.log(poiData);
 
 
 
@@ -65,7 +107,7 @@ const App = () => {
         {forecast && <Forecast data={forecast} />}
         {currentWeather && <Recommendations data={currentWeather} />}
         {currentWeather && <Alerts data={currentWeather} />}
-        {currentWeather && <Events data={currentWeather} />}
+        {poiData && <Events data={poiData} />}
       </div>
     </>
   );
