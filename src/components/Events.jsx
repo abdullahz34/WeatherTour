@@ -11,7 +11,7 @@ const Events = ({ data, poiData }) => {
     return (
         <div className="events">
             <h2 className='title'>
-                Events near you
+                Points of interest
             </h2>
             <div className='placeholder-content'>
                 <div className='placeholder-content1'>
