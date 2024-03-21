@@ -118,14 +118,6 @@ const App = () => {
     }
   }, [poiData]);
 
-  console.log(currentWeather);
-  console.log(forecast);
-  console.log(poiData);
-  console.log(poiData1);
-  console.log(poiData2);
-  // console.log(poiData.data[0].geoCode.longitude);
-
-
 
   return (
       <>
@@ -140,7 +132,7 @@ const App = () => {
         {forecast && <Forecast data={forecast} />}
         {currentWeather && <Recommendations data={currentWeather} />}
         {currentWeather && <Alerts data={currentWeather} />}
-        {poiData && <Events poiData1={poiData1} poiData2={poiData2} poiData={poiData} />}
+        {poiData && poiData1 && poiData2 && <Events poiData1={poiData1} poiData2={poiData2} poiData={poiData} />}
       </div>
     </>
   );
