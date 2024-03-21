@@ -18,3 +18,16 @@ code {
   border: none;
 }
 
+/* Reduce margin on screens smaller than 600px */
+@media (max-width: 600px) {
+  body {
+    margin: 0px 0px 10px 30px;
+  }
+}
+
+/* Reduce margin on screens smaller than 390px */
+@media (max-width: 390px) {
+  body {
+    margin: 0px 0px 10px 10px;
+  }
+}
