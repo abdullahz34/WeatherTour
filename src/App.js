@@ -24,6 +24,8 @@ const App = () => {
   const [currentWeather, setCurrentWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
   const [poiData, setPoiData] = useState(null);
+  const [poiData1, setPoiData1] = useState(null);
+  const [poiData2, setPoiData2] = useState(null);
 
   const fetchWeatherData = (lat, lon, city) => {
     const currentWeatherFetch = fetch(`${weather_api.base}weather?lat=${lat}&lon=${lon}&appid=${weather_api.key}&units=metric`);
@@ -88,9 +90,40 @@ const App = () => {
     }
   }, [currentWeather]);
 
+  const fetchPOIWeatherData = async (lat, lon) => {
+    try {
+      const weatherResponse = await fetch(`${weather_api.base}weather?lat=${lat}&lon=${lon}&appid=${weather_api.key}&units=metric`);
+      const weatherData = await weatherResponse.json();
+  
+      return weatherData;
+    } catch (error) {
+      console.error('Error:', error);
+      return Promise.reject(error);
+    }
+  };
+
+  useEffect(() => {
+    if (poiData && poiData.data && poiData.data[0] && poiData.data[0].geoCode) {
+      fetchPOIWeatherData(poiData.data[0].geoCode.latitude, poiData.data[0].geoCode.longitude)
+        .then(data => setPoiData1(data))
+        .catch(error => console.error('Error:', error));
+    }
+  }, [poiData]);
+
+  useEffect(() => {
+    if (poiData && poiData.data && poiData.data[1] && poiData.data[1].geoCode) {
+      fetchPOIWeatherData(poiData.data[1].geoCode.latitude, poiData.data[1].geoCode.longitude)
+        .then(data => setPoiData2(data))
+        .catch(error => console.error('Error:', error));
+    }
+  }, [poiData]);
+
   console.log(currentWeather);
   console.log(forecast);
   console.log(poiData);
+  console.log(poiData1);
+  console.log(poiData2);
+  // console.log(poiData.data[0].geoCode.longitude);
 
 
 
