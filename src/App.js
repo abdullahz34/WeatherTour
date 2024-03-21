@@ -140,7 +140,7 @@ const App = () => {
         {forecast && <Forecast data={forecast} />}
         {currentWeather && <Recommendations data={currentWeather} />}
         {currentWeather && <Alerts data={currentWeather} />}
-        {poiData && <Events data ={currentWeather} poiData={poiData} />}
+        {poiData && <Events poiData1={poiData1} poiData2={poiData2} poiData={poiData} />}
       </div>
     </>
   );

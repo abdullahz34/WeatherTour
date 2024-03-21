@@ -3,11 +3,7 @@ import './Events.css';
 
 // The pois test environment only offers the areas: Banglore, Barcelona, Berlin, Dallas, London, New York, Paris, San Francisco as per "https://github.com/amadeus4dev/data-collection/blob/master/data/pois.md"
 
-const Events = ({ data, poiData }) => {
-
-    // console.log(poiData.data[0].name);
-    // console.log(poiData.data[0].geoCode.latitude);
-
+const Events = ({ poiData1, poiData2, poiData }) => {
     return (
         <div className="events">
             <h2 className='title'>
@@ -16,7 +12,7 @@ const Events = ({ data, poiData }) => {
             <div className='placeholder-content'>
                 <div className='placeholder-content1'>
                     <div className='placeholder-image'>
-                        <img src="/icons/01d.png" alt="" />
+                    <img src={poiData1 && poiData1.weather && poiData1.weather[0] ? `icons/${poiData1.weather[0].icon}.png` : 'default_icon.png'} alt="weather" />
                     </div>
                     <div className='placeholder-text'>
                         <h3>{poiData.data[0].name}</h3>
@@ -25,7 +21,7 @@ const Events = ({ data, poiData }) => {
                 </div>
                 <div className='placeholder-content2'>
                     <div className='placeholder-image2'>
-                        <img src="/icons/03d.png" alt="" />
+                    <img src={poiData2 && poiData2.weather && poiData2.weather[0] ? `icons/${poiData2.weather[0].icon}.png` : 'default_icon.png'} alt="weather" />
                     </div>
                     <div className='placeholder-text2'>
                         <h3>{poiData.data[1].name}</h3>
