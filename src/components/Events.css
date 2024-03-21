@@ -34,3 +34,14 @@
     height: 100px;
     padding-right: 10px;
 }
+
+h3 a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  h3 a:hover, h3 a:focus, h3 a:active {
+    text-decoration: none;
+    color: #007BFF; /* Change this to the color you want when hovered */
+    transform: scale(1.05); /* This will slightly increase the size of the text when hovered */
+  }
