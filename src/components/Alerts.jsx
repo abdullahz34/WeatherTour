@@ -24,8 +24,11 @@ const Alerts = ({ data }) => {
                 // If there are no alerts, display a message and a check icon
                 <>
                     <p>Any extreme weather events expected to happen near you will be reported here.</p>
+                    {/* <p>Flood Warning!!</p>  */}
                     <img className="alert-icon" src="/icons/Check.png" alt="no_warning_check" />
+                    {/* <img className="alert-icon" src="/icons/Triangle_Warning.png" alt="warning_alert_triangle" /> */}
                     <p>There are no warnings to be reported.</p>
+                    {/* <p>Risk of flooding due to heavy rain.</p> */}
                 </>
             )}
             </div>

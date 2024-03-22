@@ -21,16 +21,19 @@ const POI_api = {
 
 const App = () => {
 
+  // Define state variables for current weather, forecast, and POI data
   const [currentWeather, setCurrentWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
   const [poiData, setPoiData] = useState(null);
   const [poiData1, setPoiData1] = useState(null);
   const [poiData2, setPoiData2] = useState(null);
 
+  // Function to fetch weather data based on latitude, longitude, and city
   const fetchWeatherData = (lat, lon, city) => {
     const currentWeatherFetch = fetch(`${weather_api.base}weather?lat=${lat}&lon=${lon}&appid=${weather_api.key}&units=metric`);
     const forecastFetch = fetch(`${weather_api.base}forecast/hourly?lat=${lat}&lon=${lon}&appid=${weather_api.key}&units=metric`);
 
+    // Use Promise.all to wait for all fetches to complete
     Promise.all([currentWeatherFetch, forecastFetch])
       .then(async (response) => {
         const weatherResponse = await response[0].json();
@@ -45,10 +48,12 @@ const App = () => {
   };
 
   const handleOnSearchChange = (searchData) => {
+    // Destructure the searchData object to get latitude, longitude, and city
     const [lat, lon] = searchData.value.split(" ");
     fetchWeatherData(lat, lon, searchData.label);
   };
 
+  // Use useEffect to fetch data when the component mounts, sets default location as London
   useEffect(() => {
     const lat = 51.5074; // latitude for London
     const lon = -0.1278; // longitude for London
@@ -90,6 +95,7 @@ const App = () => {
     }
   }, [currentWeather]);
 
+  // Function to fetch weather data for a point of interest
   const fetchPOIWeatherData = async (lat, lon) => {
     try {
       const weatherResponse = await fetch(`${weather_api.base}weather?lat=${lat}&lon=${lon}&appid=${weather_api.key}&units=metric`);
@@ -102,6 +108,7 @@ const App = () => {
     }
   };
 
+  // Use useEffect to fetch weather data for a point of interest when poiData changes
   useEffect(() => {
     if (poiData && poiData.data && poiData.data[0] && poiData.data[0].geoCode) {
       fetchPOIWeatherData(poiData.data[0].geoCode.latitude, poiData.data[0].geoCode.longitude)
@@ -128,11 +135,12 @@ const App = () => {
         <div className='search'>
           <Search onSearchChange={handleOnSearchChange} />
         </div>
-        {currentWeather && <CurrentWeather data={currentWeather} />} {/* only render the CurrentWeather component if currentWeather is not null */}
-        {forecast && <Forecast data={forecast} />}
-        {currentWeather && <Recommendations data={currentWeather} />}
-        {currentWeather && <Alerts data={currentWeather} />}
-        {poiData && poiData1 && poiData2 && <Events poiData1={poiData1} poiData2={poiData2} poiData={poiData} />}
+        {/* only render the CurrentWeather component if currentWeather is not null */}
+        {currentWeather ? <CurrentWeather data={currentWeather} /> : <p>Loading current weather...</p>}
+        {forecast ? <Forecast data={forecast} /> : <p>Loading forecast...</p>}
+        {currentWeather ? <Recommendations data={currentWeather} /> : <p>Loading recommendations...</p>}
+        {currentWeather ? <Alerts data={currentWeather} /> : <p>Loading alerts...</p>}
+        {poiData && poiData1 && poiData2 ? <Events poiData1={poiData1} poiData2={poiData2} poiData={poiData} /> : <p>Loading points of interest...</p>}
       </div>
     </>
   );

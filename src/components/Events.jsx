@@ -7,6 +7,7 @@ const Events = ({ poiData1, poiData2, poiData }) => {
     const [index, setIndex] = useState(0); // Initialize index state variable to 0
     const [index2, setIndex2] = useState(1);
 
+    // Function to handle click on the "More" button
     const handleMoreClick = () => {
         setIndex((prevIndex) => (prevIndex < 9 ? prevIndex + 1 : 0)); // Increment index up to 9 and then reset to 0
         setIndex2((prevIndex2) => (prevIndex2 < 9 ? prevIndex2 + 1 : 0));
@@ -27,6 +28,7 @@ const Events = ({ poiData1, poiData2, poiData }) => {
                     </div>
                     <div className='placeholder-text'>
                         <h3>
+                            {/* Add a link to the point of interest name, uses index state to show corresponding link */}
                             <a href={`https://www.google.com/search?q=${encodeURIComponent(poiData.data[index].name)}`} target="_blank" rel="noopener noreferrer">
                                 {poiData.data[index].name}
                             </a>

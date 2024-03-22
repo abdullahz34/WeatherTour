@@ -2,6 +2,7 @@ import React from 'react';
 import './Recommendations.css';
 
 const Recommendations = ({ data }) => {
+  // Initialize the recommendation and reason strings
   let recommendation = '';
   let reason = '';
 
@@ -47,6 +48,7 @@ const Recommendations = ({ data }) => {
       reason = 'Weather conditions can change rapidly, and being unprepared can lead to health and safety risks.';
   }
 
+  // Check the temperature and add to the recommendation and reason strings accordingly
   if (data.main.temp < 20) {
     recommendation += '\n It might be a bit chilly, consider wearing warmer clothes.';
     reason += '\n The temperature is below 20 degrees Celsius, which may feel cool.';
@@ -55,16 +57,19 @@ const Recommendations = ({ data }) => {
     reason += '\n The temperature is above 30 degrees Celsius, which can be uncomfortable for many people.';
   }
 
+  // Check the wind speed and add to the recommendation and reason strings accordingly
   if (data.wind.speed > 10) {
     recommendation += '\n It\'s also quite windy, consider wearing a windbreaker.';
     reason += '\n High wind speeds can make the weather feel colder and can be uncomfortable.';
   }
 
+  // Check the humidity and add to the recommendation and reason strings accordingly
   if (data.main.humidity > 80) {
     recommendation += '\n The humidity is high, consider wearing breathable clothes.';
     reason += '\n High humidity can make the weather feel hotter and can be uncomfortable.';
   }
 
+  // Render the recommendations and reasons
   return (
     <div className="recommendations">
       <div className="title-container">
