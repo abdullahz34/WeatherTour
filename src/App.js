@@ -100,7 +100,7 @@ const App = () => {
     try {
       const weatherResponse = await fetch(`${weather_api.base}weather?lat=${lat}&lon=${lon}&appid=${weather_api.key}&units=metric`);
       const weatherData = await weatherResponse.json();
-  
+
       return weatherData;
     } catch (error) {
       console.error('Error:', error);
@@ -127,7 +127,7 @@ const App = () => {
 
 
   return (
-      <>
+    <>
       <div className='container'>
         <header className="header">
           <h1>Weather Tour</h1>
@@ -140,7 +140,10 @@ const App = () => {
         {forecast ? <Forecast data={forecast} /> : <p>Loading forecast...</p>}
         {currentWeather ? <Recommendations data={currentWeather} /> : <p>Loading recommendations...</p>}
         {currentWeather ? <Alerts data={currentWeather} /> : <p>Loading alerts...</p>}
-        {poiData && poiData1 && poiData2 ? <Events poiData1={poiData1} poiData2={poiData2} poiData={poiData} /> : <p>Loading points of interest...</p>}
+        {/* // Check if poiData, poiData1, and poiData2 are not undefined before rendering the Events component */}
+        {poiData && poiData1 && poiData2 && poiData.data && poiData.data[1] && poiData.data[1].geoCode ?
+          <Events poiData1={poiData1} poiData2={poiData2} poiData={poiData} /> :
+          <p>Loading points of interest... If this message does not dissapear then the API does not support this location.</p>}
       </div>
     </>
   );
